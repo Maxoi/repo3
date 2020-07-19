@@ -1,0 +1,109 @@
+/* 整体设置 */
+*{margin:0px;padding:0px;}
+ 
+/**
+ * 设置日历的大小
+ */
+.calendar{
+  width: 840px;
+  height: 550px;
+  display: block;
+  border:1px dashed #fff;
+  /* Gphon*/
+  font-size:25px;
+  padding:20px;
+}
+.calendar-body-box{
+	opacity:0.8;
+    filter:alpha(opacity=80);/* 针对 IE8 以及更早的版本 */
+	background:#dbf2ff;
+}
+/**
+ * 设置日历顶部盒子
+ */
+.calendar .calendar-title-box{
+  position: relative;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align:center;
+  border-bottom: 1px solid #ddd;
+}
+ 
+/**
+ * 设置上个月的按钮图标
+ */
+.calendar .prev-month {
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border-left: 0px;
+  border-top: 6px solid transparent;
+  border-right: 8px solid #999;
+  border-bottom: 6px solid transparent;
+  cursor: pointer;
+}
+ 
+/**
+ * 设置下个月的按钮图标
+ */
+.calendar .next-month {
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border-right: 0px;
+  border-top: 6px solid transparent;
+  border-left: 8px solid #999;
+  border-bottom: 6px solid transparent;
+  cursor: pointer;
+}
+ 
+ 
+/* 设置日历表格样式 */
+.calendar-table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align:center;
+}
+ 
+/* 表格行高 */
+.calendar-table tr{
+  height: 50px;/*30 Gphon*/
+  line-height: 50px;/*30 Gphon*/
+}
+ 
+/* 当前天 颜色特殊显示 */
+.currentDay {
+  color: red;
+}
+ 
+/* 本月 文字颜色 */
+.currentMonth {
+  color: #000;
+}
+ 
+/* 其他月颜色 */
+.otherMonth{
+  color: #1979de;
+}
+#active{
+  background:#333;
+  /*border-bottom:1px dashed #000;*/
+  color:#fff;
+  border:1px solid #000;
+}
+
+
+.intel_order button{-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:0;background-color:#fff;border:0;padding:10px 15px;color:#333;border-radius:3px;width:130px;cursor:pointer;font-family:microsoft yahei,Arial,sans-serif;font-size:16px;font-weight:700;-webkit-transition-duration:.25s;transition-duration:.25s}
+.intel_order button:hover{background-color:#ddeeff;color:#1b82ee}
+.intel_order  #onekey_close{background:#ccc}
+.infom{width:840px}
+.path{margin-bottom:2px;}
+.path a{color:#fff;text-decoration:none;} 
+.path a:hover{color:#000;text-decoration:underline;} 

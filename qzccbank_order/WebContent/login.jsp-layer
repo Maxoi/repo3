@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>泉州银行订餐系统</title>
+	<link rel="stylesheet" href="./css/default/layer.css">
+	<link rel="stylesheet" href="./css/normalize.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/prefixfree.min.js"></script>
+	<script src="./js/html5.js"></script>
+	<!--<script src="./js/browser_type.js"></script> -->
+	<style>
+		.update{
+			color:#fff;
+		}
+		.tj{
+			color:orange;
+			font-size:15px;
+		}
+	</style>
+</head>
+<body>
+	<script src="./js/jquery-1.8.2.min.js"></script>
+	<script src="./js/layer.js">
+	</script>
+	
+	<button id="parentIframe" class="layui-btn">运行上述例子</button>
+	<script>
+	//弹出一个iframe层
+  $('#parentIframe').on('click', function(){
+    layer.open({
+  type: 2,
+  title: false,
+  closeBtn: 0, //不显示关闭按钮
+  shade: [0],
+  area: ['340px', '215px'],
+  offset: 'rb', //右下角弹出
+  time: 2000, //2秒后自动关闭
+  anim: 2,
+  content: ['test/guodu.html', 'no'], //iframe的url，no代表不显示滚动条
+  end: function(){ //此处用于演示
+    
+  }
+});
+  });
+	</script>
+  <div class="login">
+	<h1><a href="zf.html" style="color:#fff" target="_blank" >缴费</a></h1>
+	<h1><a href="list" class="tj">当月统计</a> <a href="201803.xls" class="tj">上月报表</a><% if(request.getAttribute("dateCount") != null) out.print("<p>今天已订:"+request.getAttribute("dateCount")+"</p>"); %></h1>
+	<h1>qzccbank-订餐</h1>
+    <input type="button" onclick="forbid()" value="禁止订餐(仅限报餐人员点击,请注意!)" />  
+	<h1 class="error_info" style="color:red"><% if(request.getAttribute("error_info") != null) out.print(request.getAttribute("error_info")); %></h1>
+    <form method="post" action="index?method=login">
+    	<span id="label_info_u" style="display:none">工号</span><input type="text" name="username" placeholder="工号" id="username" required="required" />
+    	<span id="label_info_p" style="display:none">密码</span><input type="password" name="password" placeholder="密码" id="password"  required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">登录</button>
+        <h1 class="login-author">design by xujh & youhl 2018 V1.2.0</h1>
+        <h1 class="login-useinfo">可用时段:8:30 AM - 9:30 AM</h1>
+        <h1 class="login-useinfo">请及时来此勾饭</h1>
+    </form>
+</div>
+<div class="update"><marquee>v1.2.0 更新说明:<p>修改缴费页面提醒,请务必做好支付备注</p></marquee></div>
+    <script src="js/index.js"></script>
+    	<SCRIPT LANGUAGE=javascript>
+    	//alert('本站已迁移到http://168.168.241.158:7666/qzccbank_order/index请在登陆页进入,存储收藏夹');
+		function forbid() { 
+		 var msg = "您真的确定要冻结所有用户吗？一经点击所有人无法订餐\n\n请确认！"; 
+		 if (confirm(msg)==true){ 
+		  window.location.href='index?method=lock';
+		  //return true; 
+		 }else{ 
+		  return false; 
+		 } 
+		} 
+</body>
+</html>
